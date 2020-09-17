@@ -1,0 +1,16 @@
+<%- include("partials/header") %>
+<div class="ui container">
+	<% for(var i = 0; i < blogs.length; i++){ %>
+		<div class="ui container">
+			<h1><%= blogs[i].title %></h1>
+			<img src="<%= blogs[i].image %>" width="450" height="300">
+			<div>
+			<span><%= blogs[i].created.toDateString() %></span>
+			</div>
+			<p><%= blogs[i].body.substring(0, 100) %>...</p>	
+			<a href="/blogs/<%= blogs[i]._id %>">Read More</a>
+
+		</div>
+	<% } %>
+</div>
+<%- include("partials/footer") %>
